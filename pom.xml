@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>mybot</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>mybot Maven Webapp</name>
+  <url>https://repo1.maven.org/maven2/</url>
+  <properties>
+    <simbot.version>3.0.0-M2</simbot.version>
+    <simbot.mirai.version>3.0.0.0-beta.4</simbot.mirai.version>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <!-- Spring Boot 版本 -->
+    <version>2.7.0</version>
+    <relativePath/>
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>love.forte.simbot.boot</groupId>
+      <artifactId>simboot-core-spring-boot-starter</artifactId>
+      <version>${simbot.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>love.forte.simbot.component</groupId>
+      <artifactId>simbot-component-mirai-boot</artifactId>
+      <version>${simbot.mirai.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>net.mamoe</groupId>
+          <artifactId>mirai-core-jvm</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>net.mamoe</groupId>
+      <artifactId>mirai-core-jvm</artifactId>
+      <version>2.13.0-RC2</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>kotlinx-serialization-core-jvm</artifactId>
+          <groupId>org.jetbrains.kotlinx</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.15.3</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+
+    <!-- 图片信息解析 -->
+    <dependency>
+      <groupId>com.drewnoakes</groupId>
+      <artifactId>metadata-extractor</artifactId>
+      <version>2.18.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>2.0.18</version>
+    </dependency>
+
+
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
