@@ -1,7 +1,6 @@
 package com.lqs.demo.timer;
 
 import com.lqs.demo.util.FileUtil;
-import love.forte.simbot.ID;
 import love.forte.simbot.Identifies;
 import love.forte.simbot.bot.OriginBotManager;
 import love.forte.simbot.message.AtAll;

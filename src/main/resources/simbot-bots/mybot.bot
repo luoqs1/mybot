@@ -1,6 +1,6 @@
 {
         "component": "simbot.mirai",
-        "code": 123456,
+        "code": 12345,
         "passwordInfo": {
         "type": "text",
         "text": "*****"
